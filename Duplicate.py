@@ -5,15 +5,16 @@ import csv
 
 cutoff = 5
 similarParent = []
-imagesList = os.listdir('/Users/varshitrajput/Desktop/Images/')
+pathe = '/Users/varshitrajput/Desktop/Images/' 
+imagesList = os.listdir(pathe)
 for i in range(len(imagesList)):
     for j in range(i + 1, len(imagesList)):
         similar = []
         if imagesList[i].startswith('.') or imagesList[j].startswith('.'):
             break
         else:
-            path1 = '/Users/varshitrajput/Desktop/Images/'+ str(imagesList[i])
-            path2 = '/Users/varshitrajput/Desktop/Images/'+ str(imagesList[j])
+            path1 = pathe + str(imagesList[i])
+            path2 = pathe + str(imagesList[j])
             image1 = Image.open(path1)
             image2 = Image.open(path2)
             width1, height1 = image1.size
